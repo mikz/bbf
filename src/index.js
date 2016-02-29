@@ -16,7 +16,7 @@ render((
       <IndexRoute component={Home} />
       <Route path="beers" component={Beers}/>
       <Route path="taps" component={Taps} count={70}>
-        <Route path=":beerId" component={TapVote}/>
+        <Route path="/tap/:beerId" component={TapVote}/>
       </Route>
     </Route>
   </Router>
