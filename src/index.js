@@ -7,14 +7,17 @@ injectTapEventPlugin();
 
 
 import { App, Home } from './App';
-import { Beers } from './Beers';
+import { Beers, Beer } from './Beers';
 import { Taps, TapVote } from './Taps';
 
 render((
   <Router history={browserHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={Home} />
-      <Route path="beers" component={Beers}/>
+      <Route path="beers" component={Beers}>
+
+      </Route>
+      <Route path="/beer/:beerKey" component={Beer}/>
       <Route path="taps" component={Taps} count={70}>
         <Route path="/tap/:beerId" component={TapVote}/>
       </Route>
