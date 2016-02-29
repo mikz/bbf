@@ -89,8 +89,10 @@ breweries.each do |brewery|
     abv = abv2num.(abv)
     ibu = ibu2num.(ibu)
 
+    tags = style.split(/\s+/)
+
     firebase.push("#{lang}/beers", { lang: lang, brewery: brewer,
-                             id: number, name: name, description: description,
+                             id: number, name: name, description: description, tags: tags,
                              style: style, color: color, tokens: tokens, abv: abv, ibu: ibu })
 
     puts number, name, description, style, color, "tokens: #{tokens}", abv, ibu
